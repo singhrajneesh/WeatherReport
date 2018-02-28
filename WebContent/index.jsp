@@ -34,12 +34,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form class="form-inline"> <span>WEATHER</span>
+          <form class="form-inline" action="search"> <span>WEATHER</span>
             <div class="input-group col-lg-11">
-              <input type="City" class="form-control" id="data" placeholder="City">
+              <input type="City" class="form-control" id="data" placeholder="City" name="city">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" onclick="getData()">Search</button>
+                <button class="btn btn-primary" type="button" onclick="getData()">Search</button> 
               </div>
+              <button class="btn btn-primary" type="button" onclick="Servlet()">Add to favourites</button>
+              <button class="btn btn-primary" type="button" onclick="ShowFavourite()">List of favourites</button>
             </div>
           </form>
         </div>

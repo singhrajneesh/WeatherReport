@@ -17,4 +17,12 @@
   <servlet-name>Weather</servlet-name>
   <url-pattern>/Weather</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>ShowFavourite</servlet-name>
+  <servlet-class>ShowFavourite</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ShowFavourite</servlet-name>
+  <url-pattern>/ShowFavourite</url-pattern>
+  </servlet-mapping>
 </web-app>
