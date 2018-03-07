@@ -33,10 +33,12 @@ public class ShowFavourite extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    //this will read data from json file to list the cities name
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JSONObject cityname=new JSONObject();
+		String path="//home//sapient//Desktop//WeatherReport//src//com//training//weather//result.json";
 		try {
-			cityname = (JSONObject) parser.parse(new FileReader("//home//sapient//Desktop//WeatherReport//src//com//training//weather//result.json"));
+			cityname = (JSONObject) parser.parse(new FileReader(path));
 			System.out.println(cityname);
 			response.setContentType("application/json");
 			response.getWriter().write(cityname.toString());

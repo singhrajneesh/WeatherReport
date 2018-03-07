@@ -26,10 +26,11 @@ import com.sun.javafx.scene.paint.GradientUtils.Parser;
 public class Weather extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	int count=0;
+	int i=0,flag=0;
 	JSONArray  cities = new JSONArray();
 	JSONObject  list = new JSONObject();
 	
-    /**
+    /**0
      * @throws ParseException 
      * @throws IOException 
      * @throws FileNotFoundException 
@@ -48,15 +49,23 @@ public class Weather extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    //This will add cities name in JSON file
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		for(i=0; i<cities.size(); i++)
+		{	System.out.println(cities.get(i)+" "+request.getParameter("city"));
+			if(cities.get(i).equals(request.getParameter("city"))){
+				flag=1;
+				
+		}
+		}
+			if(flag!=1 && count<=9) {
 			cities.add(count++,request.getParameter("city"));
 			list.put("city",cities);
-		
+			String path="//home//sapient//Desktop//WeatherReport//src//com//training//weather//result.json";
 		try {
 			
-			FileWriter jsonFileWriter = new FileWriter("//home//sapient//Desktop//WeatherReport//src//com//training//weather//result.json");
+			FileWriter jsonFileWriter = new FileWriter(path);
 			jsonFileWriter.write(list.toString());
 			jsonFileWriter.flush();
 			jsonFileWriter.close();
@@ -66,6 +75,7 @@ public class Weather extends HttpServlet {
 		} 		
 		response.setContentType("application/json");
 		response.getWriter().write(cities.toString());
+		}
 		
 }
 

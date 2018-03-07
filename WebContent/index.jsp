@@ -14,7 +14,7 @@
 
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-cloud"></i><b>WEATHER</b></a>
+      <a class="navbar-brand" href="location.href='index.jsp'"><i class="fa d-inline fa-lg fa-cloud"></i><b>WEATHER</b></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
         aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
@@ -33,15 +33,15 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <form class="form-inline" action="search"> <span>WEATHER</span>
-            <div class="input-group col-lg-11">
+            <div class="input-group col-sm-11">
               <input type="City" class="form-control" id="data" placeholder="City" name="city">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" onclick="getData()">Search</button> 
+                <button class="btn btn-primary px-2" type="button" onclick="getData()">Search</button> 
               </div>
-              <button class="btn btn-primary" type="button" onclick="Servlet()">Add to favourites</button>
-              <button class="btn btn-primary" type="button" onclick="ShowFavourite()">List of favourites</button>
+              <button class="btn btn-primary px-2" type="button" onclick="Servlet()">Add to favourites</button>
+              <button class="btn btn-primary px-2" type="button" onclick="location.href='favourites.jsp'">List of favourites</button>
             </div>
           </form>
         </div>
@@ -52,7 +52,7 @@
   <div class="py-5 text-center" style="background-image: url(cloud.jpeg);background-size:cover;">
     <div class="container py-5">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <h1 class="display-3 mb-4 text-primary">Let's Clear the Air</h1>
           <p class="lead mb-5"> There aren't enough air quality sensors in the India, so it's hard to track air pollution. Please help collect this data to keep your family and neighbors healthy </p>
           <a href="#" class="btn btn-lg btn-primary mx-1">Get an Air Quality Index </a>
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div> <span class="container"><h1>Recent News</h1></span>
-  <div class="container-fluid col-md-12">
+  <div class="container-fluid col-sm-12">
     <div class="row">
       <div class="col-md-4">
         <div class="card">
